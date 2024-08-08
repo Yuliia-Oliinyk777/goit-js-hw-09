@@ -65,8 +65,10 @@ const createGalleryCard = ({ preview, original, description }) => {
 
 
 const galleryList = document.querySelector('.gallery');
-images.forEach(image => galleryList.insertAdjacentHTML('afterbegin', createGalleryCard(image)));
 
+const galleryCards = images.map(image => createGalleryCard(image)).join('');
+
+galleryList.innerHTML = galleryCards;
 
 let gallery = new SimpleLightbox('.gallery a', {
   captions: true,

@@ -34,5 +34,9 @@ const email = formField.elements["email"].value.trim();        const message = f
     formField.reset();
     localStorage.removeItem("feedback-form-state");
     console.log(formData);
+    formData = {
+    email: "",
+    message: ""
+}
 }
 formField.addEventListener('submit', onFieldFormBtnClick);
